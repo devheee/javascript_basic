@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+
+    <input type="text" value="" class="input">
+
+    <button>click</button>
+
+    <select class="select">
+        <option value="">패밀리사이트</option>
+        <option value="http://naver.com">네이버</option>
+        <option value="http://daum.net">다음</option>
+        <option value="http://google.com">구글</option>
+    </select>
+
+    <div class="ddd"></div>
+    <select class="select2">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
+    <script>
+        const SL2 = document.querySelector('.select2');
+        const DDD = document.querySelector('.ddd');
+        const ddd = e => {
+            const { value } = e.target;
+            //if문 대신 쓰는 삼항연산자
+            // if (value === '1') {
+            //     DDD.innerHTML = '1';
+            // } else {
+            //     DDD.innerHTML = '1이 아님';
+            // }
+            //삼항연산자는 jsx에서 if문을 사용할 수 없을 때 유용하게 쓰인다.
+            value === '1' ? DDD.innerHTML = '1' : DDD.innerHTML = '1이 아님';
+        }
+        SL2.addEventListener('change', ddd)
+    </script>
+
+    <script>
+
+        console.log(true && false);
+        console.log(false && false);
+        console.log(true && true);
+        console.log(true || true);
+        console.log(false || true);
+        console.log(true || false);
+
+        console.log('논리연산자 : ', 1 > 0 && 2 > 1);
+
+        const SLE = document.querySelector('.select');
+        const CG = (e) => {
+            const { value } = e.target;
+            value && window.open(value);
+            // if (value) {
+            //     window.open(value);
+            // }
+        }
+        SLE.addEventListener('change', CG)
+    </script>
+
+    <script>
+        const H1 = document.querySelector('h1');
+        const BTN = document.querySelector('button');
+        const INPUT = document.querySelector('.input');
+
+        let a = 5;
+        const PLUS = () => {
+            // let a = 5;
+            // let b = 2;
+            //H1.innerHTML = a % b;
+            if (a % 2 === 0) {
+                H1.innerHTML = '짝수'
+            } else {
+                H1.innerHTML = '홀수'
+            }
+
+            a++;
+
+        }
+
+        //산술연산자 + , - , * , / , % , ++ , --
+        //비교연산자 > , < , >= , <= , === (값과 데이터타입(문자형, 숫자형 등)이 일치), == (값만 일치) , !== (값과 데이터타입이 불일치) , != (값만 불일치)
+
+        console.log(1 == '1');
+        console.log(1 === '1');
+        console.log(1 !== '1');
+        console.log(0 == false);
+        console.log(0 === false);
+        console.log('0' == false);
+        console.log('' == false);
+        console.log(' ' == false);
+        console.log(' ' == undefined);
+        console.log(' ' == null);
+
+        const WO = () => {
+            if (INPUT.value === '네이버') {
+                window.open('http://naver.com')
+            } else {
+                alert('네이버를 검색해보세요');
+                INPUT.value = '네이버';
+            }
+
+        }
+
+        const VU = () => {
+            console.log(INPUT.value);
+
+            const l = INPUT.value.length;
+            console.log(l)
+
+            if (l < 3) {
+                alert('더 입력하세요');
+                INPUT.value = '';
+                INPUT.focus();
+                return;
+            }
+
+            H1.innerHTML = INPUT.value;
+        }
+
+        BTN.addEventListener('click', WO)
+    </script>
+</body>
+
+</html>

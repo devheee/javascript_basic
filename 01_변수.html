@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a">
+        a
+    </div>
+
+    <ul class="b">
+        <li>menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+        <li>menu04</li>
+        <li>menu05</li>
+    </ul>
+    <script>
+        const A = 1;
+        const B = '1';
+        const C = true;
+
+        const a = document.querySelector('.a'); //$('.a')
+        const b = document.querySelector('.b');
+        const c = document.querySelectorAll('.b li')
+
+        //$('.b li')
+        console.log(a, b, c, c[0], [...c]);
+        a.style.display = 'none';
+        c[4].style.display = 'none';
+
+        for (let i = 0; i < c.length; i++) {
+            c[i].innerHTML = '머머 바부팅구';
+        }
+
+        c.forEach((it, idx) => it.innerHTML = `하이하이호이호이. ${idx}`)
+
+
+        console.log(
+            typeof (A),
+            typeof (B),
+            typeof (C),
+            typeof (a),
+            typeof (b),
+            typeof (c),
+            typeof (c[0]),
+            typeof ([...c]),
+        )
+
+
+    </script>
+</body>
+
+</html>

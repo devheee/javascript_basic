@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content div {
+            display: none;
+        }
+
+        .content div.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+    </ul>
+    <div class="content">
+        <div class="on">content01</div>
+        <div>content02</div>
+        <div>content03</div>
+    </div>
+
+    <script>
+        const UL = document.querySelectorAll('.menu li');
+        const CON = document.querySelectorAll('.content div');
+
+        console.log(UL, CON)
+
+        /* $('.menu li').eq(1).on('click', function() {
+            $('.content div').eq(1).addClass('on')
+        })*/
+
+        // UL[1].addEventListener('click', () => CON[1].classList.add('on'))
+
+        UL.forEach((it, idx) => {
+            it.addEventListener('click', () => {
+                CON.forEach(it => it.classList.remove('on'))
+                CON[idx].classList.add('on')
+            })
+        })
+    </script>
+</body>
+
+</html>
