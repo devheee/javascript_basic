@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <h2></h2>
+    <button>click</button>
+
+    <script>
+
+        const H1 = document.querySelector('h1');
+        const H2 = document.querySelector('h2');
+        const BTN = document.querySelector('button');
+
+        const WRITE_H1 = (a) => {
+            H1.innerText = a + '하이루'
+        }
+
+        BTN.addEventListener('click', () => WRITE_H1('ㅎㅎㅎ'));
+
+        const 객체01 = {
+            이름: '나객체',
+            나이: 39,
+            취미: '술',
+            하는일: () => {
+                H2.innerText = '놀기'
+            },
+            좋아하는거: [
+                '술마시기', '게임하기', '영화보기'
+            ]
+        }
+
+        const 객체02 = new Object();
+        객체02.이름 = '이기봉'
+        console.log(객체02);
+
+        const WRITE_H2 = () => {
+            //H2.innerText = 객체01.이름;
+            //H2.innerText = 객체01['나이'];
+            //H2.innerText = 객체01.좋아하는거[0];
+            객체01.좋아하는거.map(it => H2.innerText += it);
+        }
+
+        WRITE_H2();
+        //객체01.하는일();
+
+    </script>
+</body>
+
+</html>

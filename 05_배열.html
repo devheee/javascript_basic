@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <button>click</button>
+
+    <h2></h2>
+    <button class="btn">click</button>
+
+    <nav>
+        <ul>
+
+        </ul>
+    </nav>
+
+    <script>
+
+        const MENU = [
+            { title: 'menu01', link: './m01.html' },
+            { title: 'menu02', link: './m02.html' },
+            { title: 'menu03', link: './m03.html' },
+            { title: 'menu04', link: './m04.html' },
+            { title: 'menu05', link: './m05.html' },
+        ]
+
+        const NAV = document.querySelector('nav ul');
+        //NAV.innerHTML = '<li><a href="' + MENU[0].link + '">' + MENU[0].title;
+        //NAV.innerHTML = `<li><a href="${MENU[0].link}">${MENU[0].title}`;
+
+        console.log(MENU.length)
+
+        // for (i = 0; i < MENU.length; i++) {
+        //     NAV.innerHTML += `<li><a href="${MENU[i].link}">${MENU[i].title}`;
+        //     console.log(i)
+        // }
+
+        const AM = MENU.map((it, idx) => {
+            return `<li><a href="${MENU[idx].link}">${MENU[idx].title}`
+        });
+        console.log(AM)
+
+        NAV.innerHTML = AM.join('');
+
+
+        const 배열 = new Array();
+        const 둘 = '둘';
+        const 배열01 = ['하나', 둘, 3, '넷']
+        console.log(배열01);
+
+        const H1 = document.querySelector('h1')
+        const BTN = document.querySelector('button')
+
+        let num = 배열01[2];
+        const WRITE_H1 = () => {
+            num++;
+            H1.innerText = num;
+        }
+
+        BTN.addEventListener('click', WRITE_H1);
+
+        const 배열_큰거 = [
+            { title: 'html', description: 'html을 공부하는 책' },
+            { title: 'css', description: 'css를 공부하는 책' },
+            { title: 'javascript', description: 'javascript를 공부하는 책' }
+        ]
+
+        //BTN2 클릭했을때 h2에다가 html : html을 공부하는 책;
+
+        const H2 = document.querySelector('h1')
+        const BTN2 = document.querySelector('.btn')
+
+        const A = 배열_큰거[0].title + ' : ' + 배열_큰거[0].description;
+        const B = `${배열_큰거[0].title + ` : ` + 배열_큰거[0].description}`;
+
+        const WRITE_H2 = () => {
+            H2.innerText = B;
+        }
+
+        BTN2.addEventListener('click', WRITE_H2)
+
+    </script>
+</body>
+
+</html>
