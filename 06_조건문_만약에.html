@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>1</h1>
+    <h2>hahahahahaha</h2>
+    <input type="text" class="input" value="1">
+    <button>click</button>
+
+    <script>
+        //조건문 : 만약에 (true) 라면 {이걸 하고} 아니면 {저걸 해라}
+
+        const a = 1;
+        const H1 = document.querySelector('h1');
+        const H2 = document.querySelector('h2');
+        const INPUT = document.querySelector('.input')
+
+        const BTN = document.querySelector('button');
+        const WD = () => {
+            //     if (INPUT.value.length > 7) {
+            //         H1.innerText = '기네'
+            //     } else {
+            //         H1.innerText = '더 입력해'
+            //     }
+            // }
+
+            //문자를 숫자로 바꿀 때 Number()라는 함수를 쓴다.
+            //숫자를 문자로 바꿀 때 String()라는 함수를 쓴다.
+
+            if (INPUT.value === String(1)) {
+                alert(true)
+            } else {
+                alert(false)
+            }
+        }
+
+        //WD();
+
+        BTN.addEventListener('click', WD);
+
+        const myArray = ['1', 2, '삼', true, false, ' ']
+        //배열[번호] 0,1,2,3...
+
+        console.log(H1.innerText);
+
+
+        if (H1.innerText !== 1) {
+            console.log('1임');
+        } else {
+            console.log('아님')
+        }
+
+        if (myArray[5]) {
+            console.log('참')
+        } else {
+            console.log('거짓')
+        }
+
+        if (H2.innerText) {
+            console.log('있음')
+        } else {
+            console.log('없음')
+        }
+
+        console.log(H2.innerText.length > 0)
+            ??????????????
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <input type="text" class="input">
+    <button>click</button>
+
+    <script>
+        const H1 = document.querySelector('h1');
+        const BTN = document.querySelector('button');
+
+        const F = () => {
+            const I = document.querySelector('.input');
+            // if (I.value > 10) {
+            //     H1.innerText = '크다.'
+            // } else {
+            //     H1.innerText = '작다.'
+            // }
+
+            // ㅡ 삼항연산자라고 불리는 간단하게 쓰는 if문 리액트의 jsx(html)안에서 if문을 쓸 수 없을 때 쓴다.
+            I.value > 10 ? H1.innerText = '크다.' : H1.innerText = '작다.';
+
+            // ㅡ 논리연산자를 이용한 조건문
+            // if(I.value > 99) {
+            //     H1.innerText = '너무 ~~~ 크다'
+            // }
+
+            // ㅡ () 산술연산자의 그룹
+            (I.value > 99) && (H1.innerText = '너무 ~~~ 크다.');
+
+        }
+
+        BTN.addEventListener('click', F)
+    </script>
+</body>
+
+</html>

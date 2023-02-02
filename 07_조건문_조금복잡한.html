@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1><strong></strong>의 평균 점수는 <span></span>이고 <em></em>이다.</h1>
+    <button>click</button>
+    <script>
+
+        const AVG = [
+            { name: '이기봉', html: 60, css: 50, javascript: 30 },
+            { name: '이기해이', html: 70, css: 80, javascript: 50 },
+            { name: '이기현', html: 40, css: 30, javascript: 10 },
+        ];
+
+        const STRONG = document.querySelector('h1 strong');
+        const SPAN = document.querySelector('h1 span');
+        const EM = document.querySelector('h1 em');
+
+        const BTN = document.querySelector('button');
+
+        const ALLAVG = (a) => {
+            // console.log(AVG[0].name)
+            // console.log(AVG[0].html)
+            // console.log(AVG[0].css)
+            // console.log(AVG[0].javascript)
+            // console.log((AVG[0].html + AVG[0].css + AVG[0].javascript) / 3)
+            STRONG.innerText = AVG[a].name;
+            const ALL = (AVG[a].html + AVG[a].css + AVG[a].javascript) / 3;
+            SPAN.innerText = parseInt(ALL);
+            // parseInt() 숫자 소수점 이하를 잘라버린다.
+
+            //     if (AVG[a].html < 40) {
+            //         EM.innerText += 'html 점수가 미달입니다.'
+            //         console.log('html 점수가 미달입니다.')
+            //     }
+            //     if (AVG[a].css < 40) {
+            //         EM.innerText += 'css 점수가 미달입니다.'
+            //         console.log('css 점수가 미달입니다.')
+            //     }
+            //     if (AVG[a].javascript < 40) {
+            //         EM.innerText += 'javascript 점수가 미달입니다.'
+            //         console.log('javascript 점수가 미달입니다.')
+            //     }
+
+
+            //     if (ALL < 60) {
+            //         EM.innerText += '불합격'
+            //     } else {
+            //         EM.innerText += '합격'
+            //     }
+            // }
+
+            //모든 과목의 평균점수가 60점 이상이고 과목별 점수가 40점 이상이면 합격
+            if (ALL > 60) {
+                if (AVG[a].html < 40) {
+                    EM.innerText += 불합격
+                } else if (AVG[a].css <= 40) {
+                    EM.innerText += 불합격
+                } else if (AVG[a].javascript <= 40) {
+                    EM.innerText += AVG[a].javascript + '불합격'
+                } else {
+                    EM.innerText += 합격
+                }
+            else {
+                EM.innerText = '불합격'
+            }
+        }
+
+
+
+
+        BTN.addEventListener('click', () => ALLAVG(2))
+
+    </script>
+</body>
+
+</html>
