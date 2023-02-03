@@ -58,25 +58,22 @@
             // }
 
             //모든 과목의 평균점수가 60점 이상이고 과목별 점수가 40점 이상이면 합격
-            if (ALL > 60) {
-                if (AVG[a].html < 40) {
-                    EM.innerText += 불합격
+            if (ALL >= 60) {
+                if (AVG[a].html <= 40) {
+                    EM.innerText = '불합격'
                 } else if (AVG[a].css <= 40) {
-                    EM.innerText += 불합격
+                    EM.innerText = '불합격'
                 } else if (AVG[a].javascript <= 40) {
-                    EM.innerText += AVG[a].javascript + '불합격'
+                    EM.innerText = AVG[a].javascript + '불합격';
                 } else {
-                    EM.innerText += 합격
+                    EM.innerText = '합격'
                 }
-            else {
+            } else {
                 EM.innerText = '불합격'
             }
         }
 
-
-
-
-        BTN.addEventListener('click', () => ALLAVG(2))
+        BTN.addEventListener('click', () => ALLAVG(1))
 
     </script>
 </body>
